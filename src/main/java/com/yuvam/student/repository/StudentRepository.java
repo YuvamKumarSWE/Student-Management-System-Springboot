@@ -1,6 +1,6 @@
 package com.yuvam.student.repository;
 
-import com.yuvam.student.model.Student;
+import com.yuvam.student.models.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -15,6 +15,6 @@ public interface StudentRepository  extends JpaRepository<Student, Long> {
     List<Student> findByFirstNameAndLastName(String firstName, String lastName);
 
     @Query("SELECT s FROM Student s WHERE s.firstName = 'Yuvam'")
-    List<Student> findMeCustom();
+    Student findMeCustom();
 
 }
